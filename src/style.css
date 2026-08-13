@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-sand text-charcoal font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-teal-800 tracking-tight;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-terracotta-400 ring-offset-2 ring-offset-sand;
+  }
+  ::selection {
+    @apply bg-terracotta-200 text-charcoal;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-terracotta-400 text-white font-medium uppercase tracking-wider text-sm transition-all duration-600 ease-cinematic hover:bg-terracotta-500 hover:translate-y-[-1px];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-teal-500 text-teal-700 font-medium uppercase tracking-wider text-sm transition-all duration-600 ease-cinematic hover:bg-teal-500 hover:text-white;
+  }
+  .card-hover {
+    @apply transition-all duration-600 ease-cinematic hover:-translate-y-1 hover:shadow-xl;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .divider-gold {
+    @apply h-[2px] w-16 bg-gold-400;
+  }
+}
