@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { GiDoubleFish } from 'react-icons/gi';
 import { FiFacebook, FiInstagram, FiYoutube, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { orgStrings } from '../data/strings';
 
@@ -17,14 +16,15 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-11 w-11 items-center justify-center bg-sand-100 text-teal-700">
-                <GiDoubleFish className="h-6 w-6" aria-hidden />
-              </div>
-              <div>
-                <div className="font-serif text-xl font-semibold text-sand-100 tracking-tight">Sanjivani Fisheries</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400">{orgStrings.en.ffpo}</div>
-              </div>
+            <div className="mb-6">
+              <Link to="/" className="inline-block" aria-label={`${orgStrings.en.societyShort} home`}>
+                <img
+                  src="/Fisheries Logo.png"
+                  alt="Sanjivani Fisheries Logo"
+                  className="h-16 w-auto object-contain"
+                />
+              </Link>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400 mt-3">{orgStrings.en.ffpo} · Est. 1996</div>
             </div>
             <p className="text-sm leading-relaxed text-teal-200 max-w-md mb-6">
               {orgStrings.en.societyName} — working with smallholder fish farmers across Maharashtra
@@ -80,6 +80,13 @@ export default function Footer() {
 
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-5">Sanjivani Group</div>
+            <div className="mb-5">
+              <img
+                src="/SANJIVANI GROUP LOGO - JAN 2023.png"
+                alt="Sanjivani Group Logo"
+                className="h-10 w-auto object-contain mb-2"
+              />
+            </div>
             <p className="text-sm text-teal-200 mb-4 leading-relaxed">
               Part of a diversified group spanning sugar, pharma, and rural development.
             </p>

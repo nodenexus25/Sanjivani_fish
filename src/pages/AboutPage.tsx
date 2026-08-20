@@ -8,8 +8,7 @@ import { milestones } from '../data/stats';
 const heroImage =
   'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Old%20black%20and%20white%20photograph%20of%20village%20cooperative%20leaders%20in%20Maharashtra%20farmland%2C%20vintage%20nostalgic%20composition%2C%20soft%20golden%20light&image_size=landscape_16_9';
 
-const founderImage =
-  'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Dignified%20elderly%20Marathi%20man%20formal%20portrait%2C%20white%20cotton%20kurta%2C%20kind%20expression%2C%20village%20background%2C%20warm%20sunset%20lighting%2C%20editorial%20photography&image_size=square_hd';
+const founderImage = '/founder image.png';
 
 export default function AboutPage() {
   return (

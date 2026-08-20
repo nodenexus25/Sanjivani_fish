@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiArrowRight } from 'react-icons/fi';
-import { GiDoubleFish } from 'react-icons/gi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { orgStrings } from '../data/strings';
 
 const navLinks = [
@@ -30,28 +29,32 @@ export default function Header() {
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm uppercase tracking-wider font-medium transition-colors duration-600 ease-cinematic ${
-      isActive ? 'text-terracotta-500' : 'text-teal-700 hover:text-terracotta-500'
+      isActive ? 'text-terracotta-400' : 'text-teal-100 hover:text-terracotta-400'
     }`;
 
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-600 ease-cinematic ${
-        scrolled ? 'bg-sand/95 backdrop-blur border-b border-teal-100 shadow-sm' : 'bg-sand border-b border-transparent'
+        scrolled ? 'bg-teal-700/95 backdrop-blur border-b border-teal-600/60 shadow-lg' : 'bg-teal-700 border-b border-teal-600/30'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-3 group" aria-label={`${orgStrings.en.societyShort} home`}>
-            <div className="flex h-11 w-11 items-center justify-center bg-teal-500 text-sand-50 transition-transform duration-600 ease-cinematic group-hover:rotate-[-6deg]">
-              <GiDoubleFish className="h-6 w-6" aria-hidden />
-            </div>
-            <div className="leading-tight">
-              <div className="font-serif text-lg text-teal-800 font-semibold tracking-tight">Sanjivani Fisheries</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-teal-600/80">FFPO · Est. 1996</div>
-            </div>
-          </Link>
+        <div className="flex items-center h-20">
+          <div className="flex-1 flex items-center">
+            <Link to="/" className="flex items-center gap-3 group" aria-label={`${orgStrings.en.societyShort} home`}>
+              <img
+                src="/Fisheries Logo.png"
+                alt="Sanjivani Fisheries Logo"
+                className="h-14 w-auto object-contain transition-transform duration-600 ease-cinematic group-hover:scale-[1.03]"
+              />
+              <div className="leading-tight">
+                <div className="font-serif text-lg text-sand-100 font-semibold tracking-tight">Sanjivani Fisheries</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400">FFPO · Est. 1996</div>
+              </div>
+            </Link>
+          </div>
 
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">
+          <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" aria-label="Primary">
             {navLinks.map((link) => (
               <NavLink key={link.to} to={link.to} end={link.to === '/'} className={linkClass}>
                 {link.label}
@@ -59,21 +62,24 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
-            <div className="text-right leading-tight pr-4 border-r border-teal-200">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-gold-600 font-semibold">An Initiative of</div>
-              <div className="text-sm font-semibold text-teal-800">{orgStrings.en.groupName}</div>
+          <div className="flex-1 hidden lg:flex items-center justify-end">
+            <div className="flex items-center gap-3">
+              <img
+                src="/SANJIVANI GROUP LOGO - JAN 2023.png"
+                alt="Sanjivani Group Logo"
+                className="h-14 w-auto object-contain"
+              />
+              <div className="leading-tight text-left">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400 font-semibold">An Initiative of</div>
+                <div className="text-sm font-semibold text-sand-100">{orgStrings.en.groupName}</div>
+              </div>
             </div>
-            <Link to="/contact" className="btn-primary group">
-              Enquire Now
-              <FiArrowRight className="ml-2 h-4 w-4 transition-transform duration-600 ease-cinematic group-hover:translate-x-1" />
-            </Link>
           </div>
 
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden inline-flex h-11 w-11 items-center justify-center text-teal-800 hover:text-terracotta-500 transition-colors"
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center text-sand-100 hover:text-terracotta-400 transition-colors"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -86,10 +92,10 @@ export default function Header() {
       <div
         id="mobile-nav"
         className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-600 ease-cinematic ${
-          open ? 'max-h-[80vh] opacity-100 border-t border-teal-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-[80vh] opacity-100 border-t border-teal-600/60' : 'max-h-0 opacity-0'
         }`}
       >
-        <nav className="px-4 sm:px-6 py-6 space-y-1 bg-sand-100/80" aria-label="Mobile">
+        <nav className="px-4 sm:px-6 py-6 space-y-1 bg-teal-700/95" aria-label="Mobile">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
@@ -98,23 +104,21 @@ export default function Header() {
               className={({ isActive }) =>
                 `block px-4 py-3 uppercase tracking-wider text-sm border-l-2 transition-all duration-300 ${
                   isActive
-                    ? 'border-terracotta-500 text-terracotta-600 bg-sand'
-                    : 'border-transparent text-teal-700 hover:border-teal-400 hover:bg-sand'
+                    ? 'border-terracotta-400 text-terracotta-400 bg-teal-600/40'
+                    : 'border-transparent text-teal-100 hover:border-teal-400 hover:bg-teal-600/20'
                 }`
               }
             >
               {link.label}
             </NavLink>
           ))}
-          <div className="pt-4 mt-4 border-t border-teal-100">
-            <Link to="/contact" className="btn-primary w-full">
-              Enquire Now
-              <FiArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-          <div className="pt-4 text-center text-xs text-teal-600">
-            <div className="uppercase tracking-[0.18em] text-gold-600 font-semibold">An Initiative of</div>
-            <div className="font-semibold text-teal-800 text-sm mt-1">{orgStrings.en.groupName}</div>
+          <div className="pt-4 flex flex-col items-center text-xs">
+            <div className="uppercase tracking-[0.18em] text-gold-400 font-semibold mb-2">An Initiative of</div>
+            <img
+              src="/SANJIVANI GROUP LOGO - JAN 2023.png"
+              alt="Sanjivani Group Logo"
+              className="h-9 w-auto object-contain"
+            />
           </div>
         </nav>
       </div>
