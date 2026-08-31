@@ -5,8 +5,7 @@ import Reveal from '../components/Reveal';
 import { FiDownload, FiArrowRight, FiX, FiChevronLeft, FiChevronRight, FiCalendar, FiClock } from 'react-icons/fi';
 import { gallery, upcomingTraining, type GalleryImage } from '../data/gallery';
 
-const heroImage =
-  'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Candid%20photograph%20of%20Indian%20farmers%20at%20fish%20harvest%2C%20nets%20full%20of%20silver%20carp%2C%20happy%20faces%2C%20golden%20hour%20warm%20light%2C%20documentary%20style&image_size=landscape_16_9';
+const heroImage = '/tilapia.jpg';
 
 export default function GalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);

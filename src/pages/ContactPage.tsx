@@ -5,8 +5,7 @@ import Reveal from '../components/Reveal';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiMessageCircle, FiCheckCircle, FiUser, FiFileText } from 'react-icons/fi';
 import { SiWhatsapp } from 'react-icons/si';
 
-const heroImage =
-  'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Rural%20Maharashtra%20roadside%20view%20towards%20Kopargaon%20town%2C%20agricultural%20fields%2C%20warm%20afternoon%20light%2C%20editorial%20travel%20photography&image_size=landscape_16_9';
+const heroImage = '/contact.png';
 
 const enquiryOptions = [
   'Pond setup / consultation',

@@ -6,8 +6,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { species, type Species } from '../data/species';
 
-const heroImage =
-  'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Assortment%20of%20freshwater%20fish%20species%20swimming%20in%20clear%20pond%20water%2C%20Rohu%20Katla%20Tilapia%20prawn%2C%20underwater%20aquaculture%20photography&image_size=landscape_16_9';
+const heroImage = '/species n product.png';
 
 type FilterKey = 'all' | 'freshwater' | 'biofloc' | 'ready';
 

@@ -5,8 +5,7 @@ import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
 import { stats } from '../data/stats';
 
-const heroImage =
-  'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Wide%20panoramic%20fish%20farm%20ponds%20at%20golden%20hour%20sunrise%2C%20aerators%20spraying%20water%2C%20Kopargaon%20Maharashtra%20rural%20landscape%2C%20dramatic%20sky&image_size=landscape_16_9';
+const heroImage = '/home.jpeg';
 
 const snapshotCards = [
   {

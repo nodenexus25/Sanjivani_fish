@@ -5,8 +5,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
 
-const heroImage =
-  'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Wide%20aerial%20of%20modern%20aquaculture%20facility%20with%20ponds%20biofloc%20tanks%20feed%20mill%20and%20hatchery%20buildings%2C%20organized%20layout%2C%20rural%20Maharashtra&image_size=landscape_16_9';
+const heroImage = '/what we do.png';
 
 export default function ServicesPage() {
   return (

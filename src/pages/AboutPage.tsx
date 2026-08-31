@@ -5,8 +5,7 @@ import { FiAward, FiBriefcase, FiMapPin } from 'react-icons/fi';
 import { GiLaurelCrown } from 'react-icons/gi';
 import { milestones } from '../data/stats';
 
-const heroImage =
-  'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Old%20black%20and%20white%20photograph%20of%20village%20cooperative%20leaders%20in%20Maharashtra%20farmland%2C%20vintage%20nostalgic%20composition%2C%20soft%20golden%20light&image_size=landscape_16_9';
+const heroImage = '/about.jpeg';
 
 const founderImage = '/founder image.png';
 
