@@ -5,7 +5,7 @@ import Reveal from '../components/Reveal';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiMessageCircle, FiCheckCircle, FiUser, FiFileText } from 'react-icons/fi';
 import { SiWhatsapp } from 'react-icons/si';
 
-const heroImage = '/contact.png';
+const heroImage = '/contact.jpeg';
 
 const enquiryOptions = [
   'Pond setup / consultation',
@@ -26,6 +26,8 @@ interface FormState {
 }
 
 const initialForm: FormState = { name: '', phone: '', email: '', type: '', message: '' };
+
+const ENQUIRY_EMAIL = 'contactus@sanjivaniedge.com';
 
 export default function ContactPage() {
   const [form, setForm] = useState<FormState>(initialForm);
@@ -49,6 +51,22 @@ export default function ContactPage() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+
+    const subject = `[Sanjivani Enquiry] ${form.type} — ${form.name}`;
+    const bodyLines = [
+      `Full Name: ${form.name}`,
+      `Phone: ${form.phone}`,
+      `Email: ${form.email || '(not provided)'}`,
+      `Enquiry Type: ${form.type}`,
+      '',
+      'Message:',
+      form.message,
+    ];
+    const mailto = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+    window.location.href = mailto;
     setSubmitted(true);
   };
 
@@ -314,10 +332,10 @@ export default function ContactPage() {
                           Email
                         </div>
                         <a
-                          href="mailto:info@sanjivanifisheries.in"
+                          href={`mailto:${ENQUIRY_EMAIL}`}
                           className="text-sand-100 hover:text-terracotta-300 transition-colors"
                         >
-                          info@sanjivanifisheries.in
+                          {ENQUIRY_EMAIL}
                         </a>
                       </div>
                     </li>

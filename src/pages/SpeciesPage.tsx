@@ -6,7 +6,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { species, type Species } from '../data/species';
 
-const heroImage = '/species n product.png';
+const heroImage = '/product n species.jpeg';
 
 type FilterKey = 'all' | 'freshwater' | 'biofloc' | 'ready';
 

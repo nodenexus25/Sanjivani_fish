@@ -4,7 +4,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { orgStrings } from '../data/strings';
 
 const navLinks = [
-  { to: '/', label: 'Home' },
+  { to: '/', label: 'Home' },                                             
   { to: '/about', label: 'About' },
   { to: '/services', label: 'What We Do' },
   { to: '/species', label: 'Species' },
@@ -14,7 +14,7 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const location = useLocation();           
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);

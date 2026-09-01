@@ -5,7 +5,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
 
-const heroImage = '/what we do.png';
+const heroImage = '/what we do.jpeg';
 
 export default function ServicesPage() {
   return (
