@@ -41,8 +41,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <FiMail className="h-4 w-4 text-gold-400 shrink-0" />
-                <a href="mailto:contactus@sanjivaniedge.com" className="hover:text-terracotta-300 transition-colors">
-                  contactus@sanjivaniedge.com
+                <a href="mailto:contactus@sanjivanifish.com" className="hover:text-terracotta-300 transition-colors">
+                  contactus@sanjivanifish.com
                 </a>
               </div>
             </div>

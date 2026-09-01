@@ -27,7 +27,7 @@ interface FormState {
 
 const initialForm: FormState = { name: '', phone: '', email: '', type: '', message: '' };
 
-const ENQUIRY_EMAIL = 'contactus@sanjivaniedge.com';
+const ENQUIRY_EMAIL = 'contactus@sanjivanifish.com';
 
 export default function ContactPage() {
   const [form, setForm] = useState<FormState>(initialForm);
