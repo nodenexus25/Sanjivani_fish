@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-teal-100">
               <div className="flex items-center gap-3">
                 <FiMapPin className="h-4 w-4 text-gold-400 shrink-0" />
-                <span>At & Post. Kopargaon, Dist. Ahmednagar, Maharashtra 423601</span>
+                <span>Sahajanandnagar, Post-Shinganapur, Tal. Kopargaon, Dist. Ahilyanagar, Maharashtra 423603</span>
               </div>
               <div className="flex items-center gap-3">
                 <FiPhone className="h-4 w-4 text-gold-400 shrink-0" />
@@ -41,8 +41,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <FiMail className="h-4 w-4 text-gold-400 shrink-0" />
-                <a href="mailto:info@sanjivanifisheries.in" className="hover:text-terracotta-300 transition-colors">
-                  info@sanjivanifisheries.in
+                <a href="mailto:contactus@sanjivaniedge.com" className="hover:text-terracotta-300 transition-colors">
+                  contactus@sanjivaniedge.com
                 </a>
               </div>
             </div>

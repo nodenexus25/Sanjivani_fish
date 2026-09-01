@@ -5,7 +5,7 @@ import Reveal from '../components/Reveal';
 import { FiDownload, FiArrowRight, FiX, FiChevronLeft, FiChevronRight, FiCalendar, FiClock } from 'react-icons/fi';
 import { gallery, upcomingTraining, type GalleryImage } from '../data/gallery';
 
-const heroImage = '/tilapia.jpg';
+const heroImage = "/gallery/WhatsApp Image 2025-05-31 at 5.37.09 PM.jpeg";
 
 export default function GalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
