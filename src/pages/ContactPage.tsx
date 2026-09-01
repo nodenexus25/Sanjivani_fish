@@ -48,10 +48,7 @@ export default function ContactPage() {
     return Object.keys(e).length === 0;
   };
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
+  const buildMailto = (): string => {
     const subject = `[Sanjivani Enquiry] ${form.type} — ${form.name}`;
     const bodyLines = [
       `Full Name: ${form.name}`,
@@ -62,11 +59,27 @@ export default function ContactPage() {
       'Message:',
       form.message,
     ];
-    const mailto = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(
+    return `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+  };
 
-    window.location.href = mailto;
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+    const mailto = buildMailto();
+    const a = document.createElement('a');
+    a.href = mailto;
+    a.rel = 'noopener noreferrer';
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    try {
+      window.open(mailto, '_blank', 'noopener,noreferrer');
+    } catch {
+      window.location.href = mailto;
+    }
     setSubmitted(true);
   };
 
@@ -280,7 +293,7 @@ export default function ContactPage() {
                     Reach us directly
                   </div>
                   <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-sand-50 tracking-tight mb-8 leading-tight">
-                    Office & Farm · Kopargaon
+                    Office & Farm · Shinganapur
                   </h3>
 
                   <ul className="space-y-6">
@@ -295,11 +308,11 @@ export default function ContactPage() {
                         <p className="text-sand-100 leading-relaxed">
                           Sanjivani Matsya Vikas Co-op. Society Ltd.
                           <br />
-                          Gawande Vasti, Nevasa Road,
+                          Sahajanandnagar, Post-Shinganapur,
                           <br />
-                          Kopargaon — 423 601
+                          Tal. Kopargaon — 423 603
                           <br />
-                          Dist. Ahmednagar, Maharashtra
+                          Dist. Ahilyanagar, Maharashtra
                         </p>
                       </div>
                     </li>
@@ -357,8 +370,8 @@ export default function ContactPage() {
             <Reveal delay={120}>
               <div className="mt-6 border-2 border-teal-100 overflow-hidden h-72 sm:h-80">
                 <iframe
-                  title="Sanjivani Fisheries — Kopargaon map"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=74.4600%2C19.8600%2C74.5800%2C19.9300&layer=mapnik&marker=19.8952%2C74.5189"
+                  title="Sanjivani Fisheries — Shinganapur, Kopargaon map"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=74.4300%2C19.8600%2C74.5400%2C19.9400&layer=mapnik&marker=19.9070%2C74.4850"
                   loading="lazy"
                   className="w-full h-full border-0"
                   allowFullScreen
@@ -366,7 +379,7 @@ export default function ContactPage() {
                 />
               </div>
               <a
-                href="https://www.openstreetmap.org/?mlat=19.8952&mlon=74.5189#map=13/19.8952/74.5189"
+                href="https://www.openstreetmap.org/?mlat=19.9070&mlon=74.4850#map=13/19.9070/74.4850"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-teal-700 hover:text-terracotta-600 transition-colors"
