@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiFacebook, FiInstagram, FiYoutube, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { orgStrings } from '../data/strings';
 
 const quickLinks = [
@@ -45,22 +45,6 @@ export default function Footer() {
                   contactus@sanjivaniedge.com
                 </a>
               </div>
-            </div>
-            <div className="flex items-center gap-3 mt-6">
-              {[
-                { Icon: FiFacebook, label: 'Facebook', href: '#' },
-                { Icon: FiInstagram, label: 'Instagram', href: '#' },
-                { Icon: FiYoutube, label: 'YouTube', href: '#' },
-              ].map(({ Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center bg-teal-600 hover:bg-terracotta-500 text-teal-100 hover:text-white transition-all duration-600 ease-cinematic hover:-translate-y-0.5"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
             </div>
           </div>
 
