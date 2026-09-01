@@ -50,7 +50,7 @@ export default function HomePage() {
         <img src={heroImage} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-teal-900/85 via-teal-800/55 to-charcoal-800/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/40 via-transparent to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center pb-36 sm:pb-40 md:pb-44">
           <Reveal>
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="divider-gold" />
