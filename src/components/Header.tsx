@@ -8,6 +8,7 @@ const navLinks = [
   { to: '/about', label: 'About' },
   { to: '/services', label: 'What We Do' },
   { to: '/species', label: 'Species' },
+  { to: '/gallery', label: 'Gallery' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -70,8 +71,9 @@ export default function Header() {
                 className="h-14 w-auto object-contain"
               />
               <div className="leading-tight text-left">
-                <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400 font-semibold">An Initiative of</div>
-                <div className="text-sm font-semibold text-sand-100">{orgStrings.en.groupName}</div>
+                <div className="text-[11px] uppercase tracking-[0.18em] text-gold-400 font-semibold">A</div>
+                <div className="text-sm font-semibold text-sand-100 font-serif italic">sanjivani Group</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400 font-semibold">Brand · Since 1962</div>
               </div>
             </div>
           </div>
@@ -113,12 +115,16 @@ export default function Header() {
             </NavLink>
           ))}
           <div className="pt-4 flex flex-col items-center text-xs">
-            <div className="uppercase tracking-[0.18em] text-gold-400 font-semibold mb-2">An Initiative of</div>
+            <div className="uppercase tracking-[0.18em] text-gold-400 font-semibold mb-2">A</div>
             <img
               src="/SANJIVANI GROUP LOGO - JAN 2023.png"
               alt="Sanjivani Group Logo"
               className="h-9 w-auto object-contain"
             />
+            <div className="mt-2 text-center">
+              <div className="text-sm font-semibold text-sand-100 font-serif italic">sanjivani Group</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400 font-semibold">Brand · Since 1962</div>
+            </div>
           </div>
         </nav>
       </div>

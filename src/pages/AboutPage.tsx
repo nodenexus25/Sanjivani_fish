@@ -107,10 +107,20 @@ export default function AboutPage() {
                       </h3>
                       <p className="text-charcoal/75 leading-relaxed">{m.description}</p>
                     </div>
-                    <div className={`hidden md:flex md:pb-20 justify-center ${i % 2 === 0 ? 'md:justify-start md:pl-12' : 'md:justify-end md:pr-12'}`}>
-                      <div className="relative">
-                        <div className="h-5 w-5 rounded-full bg-gold-500 ring-4 ring-sand-200" />
-                        <div className="absolute -right-6 top-1/2 -translate-y-1/2 h-[1px] w-12 bg-gold-400" />
+                    <div className={`md:pb-20 ${i % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
+                      <div className={`relative mx-auto max-w-sm md:mx-0 ${i % 2 === 0 ? '' : 'md:ml-auto'}`}>
+                        <div className={`absolute -inset-3 -z-10 ${i % 2 === 0 ? 'rotate-[2.5deg] bg-gradient-to-br from-gold-200 via-gold-100 to-sand-200' : 'rotate-[-2.5deg] bg-gradient-to-bl from-teal-200 via-teal-100 to-sand-200'}`} />
+                        <div className="relative aspect-[4/3] overflow-hidden border-4 border-white shadow-xl">
+                          <img
+                            src={m.image}
+                            alt={m.title}
+                            loading="lazy"
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-gold-500 ring-4 ring-sand-200 items-center justify-center">
+                          <div className={`absolute h-[1px] w-12 bg-gold-400 ${i % 2 === 0 ? '-left-12' : '-right-12'}`} />
+                        </div>
                       </div>
                     </div>
                   </div>

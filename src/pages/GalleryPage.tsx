@@ -69,14 +69,14 @@ export default function GalleryPage() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {gallery.map((img, i) => (
             <Reveal key={img.id} delay={i * 40}>
               <button
                 type="button"
                 onClick={() => open(i)}
                 className={`group relative block w-full overflow-hidden card-hover bg-teal-100 text-left ${
-                  i % 5 === 0 ? 'lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto' : 'aspect-[4/3]'
+                  i % 10 === 0 ? 'lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto' : 'aspect-[4/3]'
                 }`}
                 aria-label={`Open photo: ${img.title}`}
               >

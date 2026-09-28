@@ -64,12 +64,17 @@ export default function Footer() {
 
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-5">Sanjivani Group</div>
-            <div className="mb-5">
+            <div className="mb-5 flex items-center gap-3">
               <img
                 src="/SANJIVANI GROUP LOGO - JAN 2023.png"
                 alt="Sanjivani Group Logo"
-                className="h-10 w-auto object-contain mb-2"
+                className="h-10 w-auto object-contain"
               />
+              <div className="leading-tight text-left">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-gold-400 font-semibold">A</div>
+                <div className="text-xs font-semibold text-sand-100 font-serif italic">sanjivani Group</div>
+                <div className="text-[9px] uppercase tracking-[0.18em] text-gold-400 font-semibold">Brand · Since 1962</div>
+              </div>
             </div>
             <p className="text-sm text-teal-200 mb-4 leading-relaxed">
               Part of a diversified group spanning sugar, pharma, and rural development.

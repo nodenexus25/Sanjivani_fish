@@ -91,6 +91,62 @@ export const gallery: GalleryImage[] = [
     category: 'pond',
     image: "/gallery/WhatsApp Image 2025-05-31 at 5.37.09 PM.jpeg",
   },
+  {
+    id: 'dsc-2120-b',
+    title: 'Hatchery Operations',
+    caption: 'Indoor hatchery — broodstock conditioning & spawning setup',
+    category: 'pond',
+    image: '/gallery/DSC_2120.JPG',
+  },
+  {
+    id: 'dsc-2125-b',
+    title: 'Egg Hatching Unit',
+    caption: 'Temperature-controlled hatching jars for carp egg incubation',
+    category: 'pond',
+    image: '/gallery/DSC_2125.JPG',
+  },
+  {
+    id: 'dsc-2130-b',
+    title: 'Nursery Management',
+    caption: 'Fry rearing tanks — daily water quality & feed monitoring',
+    category: 'pond',
+    image: '/gallery/DSC_2130.JPG',
+  },
+  {
+    id: 'wa-53507-3',
+    title: 'Farmer Consultation',
+    caption: 'On-farm advisory — soil & water testing guidance for new farmers',
+    category: 'visit',
+    image: "/gallery/WhatsApp Image 2025-05-31 at 5.35.07 PM (1).jpeg",
+  },
+  {
+    id: 'wa-53615-3',
+    title: 'Quality Harvest',
+    caption: 'Rohu & Catla harvest — uniform size & premium farm-gate quality',
+    category: 'harvest',
+    image: "/gallery/WhatsApp Image 2025-05-31 at 5.36.15 PM (1).jpeg",
+  },
+  {
+    id: 'wa-53617-2',
+    title: 'Hands-on Training',
+    caption: 'Participants learning feed calculation & biofloc C:N ratio tuning',
+    category: 'training',
+    image: "/gallery/WhatsApp Image 2025-05-31 at 5.36.17 PM (1).jpeg",
+  },
+  {
+    id: 'wa-53708-b',
+    title: 'Farm Panorama',
+    caption: 'Multiple earthen ponds — integrated aquaculture layout at full capacity',
+    category: 'pond',
+    image: "/gallery/WhatsApp Image 2025-05-31 at 5.37.08 PM.jpeg",
+  },
+  {
+    id: 'wa-53616-b',
+    title: 'Biofloc Water Management',
+    caption: 'Sludge settling & probiotic maintenance rounds for biofloc systems',
+    category: 'biofloc',
+    image: "/gallery/WhatsApp Image 2025-05-31 at 5.36.16 PM.jpeg",
+  },
 ];
 
 export interface TrainingItem {
