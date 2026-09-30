@@ -2,13 +2,34 @@ export interface StatItem {
   id: string;
   value: string;
   label: string;
+  image: string;
 }
 
 export const stats: StatItem[] = [
-  { id: 'farmers', value: '2,400+', label: 'Farmer Members' },
-  { id: 'ponds', value: '850', label: 'Ponds under Advisory' },
-  { id: 'seed', value: '18 Cr', label: 'Seed Produced / Year' },
-  { id: 'tonnage', value: '3,200 T', label: 'Harvest Aggregated' },
+  {
+    id: 'farmers',
+    value: '2,400+',
+    label: 'Farmer Members',
+    image: '/three decaded section/Screenshot 2026-09-30 103316.png',
+  },
+  {
+    id: 'ponds',
+    value: '850',
+    label: 'Ponds under Advisory',
+    image: '/three decaded section/Screenshot 2026-09-30 103321.png',
+  },
+  {
+    id: 'seed',
+    value: '18 Cr',
+    label: 'Seed Produced / Year',
+    image: '/three decaded section/Screenshot 2026-09-30 103328.png',
+  },
+  {
+    id: 'tonnage',
+    value: '3,200 T',
+    label: 'Harvest Aggregated',
+    image: '/three decaded section/Screenshot 2026-09-30 103335.png',
+  },
 ];
 
 export interface Milestone {

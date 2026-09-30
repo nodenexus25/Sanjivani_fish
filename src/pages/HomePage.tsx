@@ -138,17 +138,15 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-5">
               {stats.map((s, i) => (
                 <Reveal key={s.id} delay={i * 100}>
-                  <div className="bg-teal-50 p-8 sm:p-10 border-l-4 border-teal-500 hover:border-terracotta-500 transition-colors duration-500 card-hover h-full">
-                    <div className="font-serif text-4xl sm:text-5xl font-semibold text-teal-800 mb-2 tracking-tight">
-                      {s.value}
-                    </div>
-                    <div className="text-sm uppercase tracking-[0.15em] text-teal-600 font-medium">
-                      {s.label}
-                    </div>
-                    <div className="mt-4 flex items-center gap-1 text-gold-500">
-                      {[...Array(3)].map((_, j) => (
-                        <span key={j} className="h-1 w-6 bg-gold-400" />
-                      ))}
+                  <div className="group relative overflow-hidden border-l-4 border-teal-500 hover:border-terracotta-500 transition-colors duration-500 card-hover h-full">
+                    <div className={`absolute -inset-3 -z-10 ${i % 2 === 0 ? 'rotate-[2deg] bg-gradient-to-br from-gold-200 via-gold-100 to-sand-200' : 'rotate-[-2deg] bg-gradient-to-bl from-teal-200 via-teal-100 to-sand-200'}`} />
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <img
+                        src={s.image}
+                        alt={s.label}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 ease-cinematic group-hover:scale-105"
+                      />
                     </div>
                   </div>
                 </Reveal>
