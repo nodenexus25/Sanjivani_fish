@@ -2,8 +2,8 @@ import { useEffect, useState, useCallback } from 'react';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
-import { FiDownload, FiArrowRight, FiX, FiChevronLeft, FiChevronRight, FiCalendar, FiClock } from 'react-icons/fi';
-import { gallery, upcomingTraining, type GalleryImage } from '../data/gallery';
+import { FiDownload, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { gallery, type GalleryImage } from '../data/gallery';
 
 const heroImage = "/gallery/WhatsApp Image 2025-05-31 at 5.37.09 PM.jpeg";
 
@@ -48,11 +48,11 @@ export default function GalleryPage() {
     <>
       <SEO
         title="Gallery & Training"
-        description="Photographs of Sanjivani Fisheries ponds, biofloc units, harvests and training programs. Register for upcoming aquaculture training & capacity-building workshops in Kopargaon."
+        description="Photographs of Sanjivani Fisheries ponds, biofloc units, harvests and training programs. A look at our work across Kopargaon, Maharashtra."
       />
       <PageHero
         title="Gallery & Training."
-        subtitle="Our ponds, our harvests, our people — and the next programs to bring you on board."
+        subtitle="Our ponds, our harvests, our people — on the ground in Kopargaon."
         image={heroImage}
       />
 
@@ -182,68 +182,6 @@ export default function GalleryPage() {
         </div>
       )}
 
-      <section className="bg-sand-200/60 border-y border-teal-100 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <Reveal className="lg:col-span-4 lg:sticky lg:top-28">
-              <div className="divider-gold mb-5" />
-              <div className="text-xs uppercase tracking-[0.25em] text-gold-600 font-semibold mb-3">
-                Upcoming Training
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-teal-800 tracking-tight leading-tight mb-4">
-                Learn aquaculture from the pond up.
-              </h2>
-              <p className="text-charcoal/75 leading-relaxed mb-6">
-                Batch sizes are small (max 20 farmers) so every participant gets hands-on time at the
-                hatchery, tanks and pond bank.
-              </p>
-              <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                className="btn-primary group"
-              >
-                <FiDownload className="mr-2 h-4 w-4" />
-                Download Brochure (PDF)
-              </a>
-            </Reveal>
-
-            <div className="lg:col-span-8">
-              <ol className="relative">
-                <span className="absolute left-0 top-0 bottom-0 w-[2px] bg-teal-200 hidden sm:block" />
-                {upcomingTraining.map((t, i) => (
-                  <Reveal key={t.id} delay={i * 80}>
-                    <li className="relative pl-0 sm:pl-12 pb-10 last:pb-0">
-                      <span className="hidden sm:flex absolute left-0 top-2 h-[10px] w-[10px] -translate-x-[4px] bg-terracotta-500 ring-4 ring-sand-200/80" />
-                      <div className="bg-sand p-6 sm:p-8 hover:shadow-lg transition-all duration-600 ease-cinematic hover:-translate-y-0.5 border border-teal-100 group">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
-                          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-gold-600">
-                            <FiCalendar className="h-4 w-4" />
-                            {t.date}
-                          </div>
-                          <div className="inline-flex items-center gap-2 text-xs text-teal-600 font-medium">
-                            <FiClock className="h-4 w-4" />
-                            {t.duration}
-                          </div>
-                        </div>
-                        <h3 className="font-serif text-xl sm:text-2xl font-semibold text-teal-800 tracking-tight mb-4">
-                          {t.topic}
-                        </h3>
-                        <a
-                          href="#contact"
-                          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-teal-700 group-hover:text-terracotta-600 transition-colors"
-                        >
-                          Register your seat
-                          <FiArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5" />
-                        </a>
-                      </div>
-                    </li>
-                  </Reveal>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
