@@ -2,8 +2,9 @@ import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiMessageCircle, FiCheckCircle, FiUser, FiFileText } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiMessageCircle, FiCheckCircle, FiUser, FiFileText, FiTruck } from 'react-icons/fi';
 import { SiWhatsapp } from 'react-icons/si';
+import { contact, primaryEmail, telHref, whatsappHref } from '../data/contact';
 
 const heroImage = '/contact.jpeg';
 
@@ -27,7 +28,8 @@ interface FormState {
 
 const initialForm: FormState = { name: '', phone: '', email: '', type: '', message: '' };
 
-const ENQUIRY_EMAIL = 'contactus@sanjivanifish.com';
+const ENQUIRY_EMAIL = primaryEmail;
+const CC_EMAILS = contact.emails.slice(1).join(',');
 
 export default function ContactPage() {
   const [form, setForm] = useState<FormState>(initialForm);
@@ -59,27 +61,17 @@ export default function ContactPage() {
       'Message:',
       form.message,
     ];
-    return `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(
+    const cc = CC_EMAILS ? `cc=${encodeURIComponent(CC_EMAILS)}&` : '';
+    return `mailto:${ENQUIRY_EMAIL}?${cc}subject=${encodeURIComponent(
       subject,
-    )}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    )}&body=${encodeURIComponent(bodyLines.join('\r\n'))}`;
   };
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    const mailto = buildMailto();
-    const a = document.createElement('a');
-    a.href = mailto;
-    a.rel = 'noopener noreferrer';
-    a.target = '_blank';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    try {
-      window.open(mailto, '_blank', 'noopener,noreferrer');
-    } catch {
-      window.location.href = mailto;
-    }
+    // Open the visitor's mail client once with the enquiry pre-filled.
+    window.location.href = buildMailto();
     setSubmitted(true);
   };
 
@@ -186,7 +178,7 @@ export default function ContactPage() {
                         autoComplete="tel"
                         value={form.phone}
                         onChange={(e) => update('phone', e.target.value)}
-                        placeholder="+91 98 220 12345"
+                        placeholder="+91 98765 43210"
                         className={fieldCls('phone')}
                         aria-invalid={!!errors.phone}
                         aria-describedby={errors.phone ? 'err-phone' : undefined}
@@ -324,40 +316,57 @@ export default function ContactPage() {
                         <div className="text-[11px] uppercase tracking-[0.2em] text-teal-200 font-semibold mb-1">
                           Call us
                         </div>
-                        <p className="text-sand-100 leading-relaxed space-y-0.5">
-                          <a href="tel:+912423222888" className="hover:text-terracotta-300 transition-colors block">
-                            +91 2423 222 888
-                            <span className="text-xs text-teal-300 block">Office · Mon–Sat, 9 am – 6 pm</span>
+                        <div className="text-sand-100 leading-relaxed">
+                          <div className="text-xs text-teal-300 mb-0.5">Customer Care</div>
+                          {contact.customerCare.map((p) => (
+                            <a key={p.e164} href={telHref(p)} className="hover:text-terracotta-300 transition-colors block">
+                              {p.display}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <span className="h-10 w-10 flex items-center justify-center shrink-0 bg-teal-700/80 text-gold-400">
+                        <FiTruck className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.2em] text-teal-200 font-semibold mb-1">
+                          Bulk Sales &amp; Purchase
+                        </div>
+                        {contact.bulkSales.map((p) => (
+                          <a key={p.e164} href={telHref(p)} className="text-sand-100 hover:text-terracotta-300 transition-colors block">
+                            {p.display}
                           </a>
-                          <a href="tel:+919822012345" className="hover:text-terracotta-300 transition-colors block">
-                            +91 98220 12345
-                            <span className="text-xs text-teal-300 block">Field · WhatsApp enabled</span>
-                          </a>
-                        </p>
+                        ))}
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
                       <span className="h-10 w-10 flex items-center justify-center shrink-0 bg-teal-700/80 text-gold-400">
                         <FiMail className="h-5 w-5" />
                       </span>
-                      <div>
+                      <div className="min-w-0">
                         <div className="text-[11px] uppercase tracking-[0.2em] text-teal-200 font-semibold mb-1">
                           Email
                         </div>
-                        <a
-                          href={`mailto:${ENQUIRY_EMAIL}`}
-                          className="text-sand-100 hover:text-terracotta-300 transition-colors"
-                        >
-                          {ENQUIRY_EMAIL}
-                        </a>
+                        {contact.emails.map((email) => (
+                          <a
+                            key={email}
+                            href={`mailto:${email}`}
+                            className="text-sm sm:text-base text-sand-100 hover:text-terracotta-300 transition-colors block [overflow-wrap:anywhere]"
+                          >
+                            {email.split('@')[0]}@<wbr />
+                            {email.split('@')[1]}
+                          </a>
+                        ))}
                       </div>
                     </li>
                   </ul>
 
                   <a
-                    href="https://wa.me/919822012345?text=Namaste%20Sanjivani%20Fisheries%2C%20I%20would%20like%20to%20enquire%20about"
+                    href={whatsappHref()}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] text-white font-semibold uppercase tracking-wider text-sm hover:bg-[#20bd5a] transition-colors duration-500"
                   >
                     <SiWhatsapp className="h-5 w-5" />

@@ -67,7 +67,7 @@ export default function PageHero({ title, subtitle, image }: PageHeroProps) {
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-4 text-base sm:text-lg text-sand-100/85 max-w-2xl leading-relaxed">{subtitle}</p>
+          <p className="hidden sm:block mt-4 text-base sm:text-lg text-sand-100/85 max-w-2xl leading-relaxed">{subtitle}</p>
         )}
       </div>
     </section>

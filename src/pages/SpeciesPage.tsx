@@ -8,13 +8,12 @@ import { species, type Species } from '../data/species';
 
 const heroImage = '/product n species.jpeg';
 
-type FilterKey = 'all' | 'freshwater' | 'biofloc' | 'ready';
+type FilterKey = 'all' | 'big-pond' | 'small-pond';
 
 const filters: { key: FilterKey; label: string; sub: string }[] = [
   { key: 'all', label: 'All Species', sub: 'Full catalogue' },
-  { key: 'freshwater', label: 'Freshwater Species', sub: 'Traditional pond culture' },
-  { key: 'biofloc', label: 'Biofloc Species', sub: 'Tank & high-density' },
-  { key: 'ready', label: 'Ready to Sell', sub: 'Market-size harvest' },
+  { key: 'big-pond', label: 'Big Pond', sub: 'Rohu · Katla · Mrigal · Kombda · Chopda' },
+  { key: 'small-pond', label: 'Small Pond', sub: 'Singhi · Pabda · Koi · Murrel' },
 ];
 
 export default function SpeciesPage() {
@@ -29,7 +28,7 @@ export default function SpeciesPage() {
     <>
       <SEO
         title="Species & Products"
-        description="Rohu, Katla, Mrigal, Tilapia, Pangasius, Common Carp, Grass Carp, Silver Carp and freshwater prawn — quality seed and market-ready fish from Sanjivani FFPO."
+        description="Big Pond: Rohu, Katla, Mrigal, Kombda, Chopda. Small Pond: Singhi, Pabda, Koi, Murrel — quality seed and market-ready fish from Sanjivani FFPO."
       />
       <PageHero
         title="Species & Products."
@@ -41,7 +40,7 @@ export default function SpeciesPage() {
           <div
             role="tablist"
             aria-label="Filter species"
-            className="grid grid-cols-2 md:grid-cols-4 gap-px bg-teal-100 mb-16"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-teal-100 mb-16"
           >
             {filters.map((f) => {
               const isActive = active === f.key;
@@ -84,11 +83,9 @@ export default function SpeciesPage() {
                       <span
                         key={c}
                         className={`text-[10px] uppercase tracking-[0.16em] font-semibold px-3 py-1 ${
-                          c === 'ready'
-                            ? 'bg-terracotta-500 text-white'
-                            : c === 'biofloc'
-                            ? 'bg-teal-700 text-sand-100'
-                            : 'bg-gold-500 text-white'
+                          c === 'big-pond'
+                            ? 'bg-blue-900 text-sand-100'
+                            : 'bg-emerald-700 text-white'
                         }`}
                       >
                         {c}

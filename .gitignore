@@ -34,3 +34,6 @@ Thumbs.db
 .env.local
 .env.*.local
 .vite/
+
+# full-resolution source images (web copies live in public/)
+originals/

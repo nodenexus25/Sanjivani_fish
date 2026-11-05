@@ -48,31 +48,34 @@ export default function HomePage() {
 
       <section className="relative w-full h-[88vh] min-h-[560px] max-h-[760px] overflow-hidden">
         <img src={heroImage} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/85 via-teal-800/55 to-charcoal-800/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/40 via-transparent to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center pb-36 sm:pb-40 md:pb-44">
+        {/* Mobile: photo stays clear at the top, darkening only behind the text at the bottom */}
+        <div className="sm:hidden absolute inset-0 bg-gradient-to-b from-transparent via-teal-900/25 to-teal-900/95" />
+        {/* Tablet & desktop: original overlay */}
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-br from-teal-900/85 via-teal-800/55 to-charcoal-800/70" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-charcoal-900/40 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end sm:justify-center pb-32 sm:pb-40 md:pb-44">
           <Reveal>
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="divider-gold" />
-              <span className="text-xs uppercase tracking-[0.25em] text-gold-300 font-semibold">
+            <div className="inline-flex items-center gap-3 mb-4 sm:mb-6 bg-teal-900/70 sm:bg-transparent px-3 py-1.5 sm:p-0 backdrop-blur-sm sm:backdrop-blur-none">
+              <div className="hidden sm:block divider-gold" />
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-gold-300 font-semibold">
                 FFPO · Est. 1996 · Kopargaon
               </span>
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-sand-50 leading-[1.05] tracking-tight max-w-4xl">
+            <h1 className="font-serif text-[2.6rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-sand-50 leading-[1.05] tracking-tight max-w-4xl [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:[text-shadow:none] border-l-4 border-gold-400 pl-4 sm:border-0 sm:pl-0">
               Sustainable Aquaculture for{' '}
               <span className="text-terracotta-400 italic">Rural Prosperity.</span>
             </h1>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-6 text-lg sm:text-xl text-sand-100/85 max-w-2xl leading-relaxed">
+            <p className="hidden sm:block mt-6 text-lg sm:text-xl text-sand-100/85 max-w-2xl leading-relaxed">
               Sanjivani Matsya Vikas Co-operative Society Ltd. — a Fish Farmer Producer Organization
               building profitable, climate-resilient fish farming from pond to market.
             </p>
           </Reveal>
           <Reveal delay={300}>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link to="/services" className="btn-primary group">
                 Our Services
                 <FiArrowRight className="ml-2 h-4 w-4 transition-transform duration-600 ease-cinematic group-hover:translate-x-1" />

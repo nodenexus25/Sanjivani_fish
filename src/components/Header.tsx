@@ -29,7 +29,7 @@ export default function Header() {
   }, [location.pathname]);
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm uppercase tracking-wider font-medium transition-colors duration-600 ease-cinematic ${
+    `text-sm uppercase tracking-wider font-medium whitespace-nowrap transition-colors duration-600 ease-cinematic ${
       isActive ? 'text-terracotta-400' : 'text-teal-100 hover:text-terracotta-400'
     }`;
 
@@ -55,7 +55,7 @@ export default function Header() {
             </Link>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" aria-label="Primary">
+          <nav className="hidden xl:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" aria-label="Primary">
             {navLinks.map((link) => (
               <NavLink key={link.to} to={link.to} end={link.to === '/'} className={linkClass}>
                 {link.label}
@@ -63,7 +63,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex-1 hidden lg:flex items-center justify-end">
+          <div className="flex-1 hidden xl:flex items-center justify-end">
             <div className="flex items-center gap-3">
               <img
                 src="/SANJIVANI GROUP LOGO - JAN 2023.png"
@@ -81,7 +81,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden inline-flex h-11 w-11 items-center justify-center text-sand-100 hover:text-terracotta-400 transition-colors"
+            className="xl:hidden inline-flex h-11 w-11 items-center justify-center text-sand-100 hover:text-terracotta-400 transition-colors"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -93,7 +93,7 @@ export default function Header() {
 
       <div
         id="mobile-nav"
-        className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-600 ease-cinematic ${
+        className={`xl:hidden overflow-hidden transition-[max-height,opacity] duration-600 ease-cinematic ${
           open ? 'max-h-[80vh] opacity-100 border-t border-teal-600/60' : 'max-h-0 opacity-0'
         }`}
       >

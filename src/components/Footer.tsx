@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { orgStrings } from '../data/strings';
+import { contact, telHref } from '../data/contact';
 
 const quickLinks = [
   { to: '/about', label: 'About Us' },
@@ -30,20 +31,42 @@ export default function Footer() {
               {orgStrings.en.societyName} — working with smallholder fish farmers across Maharashtra
               since 1996 to build profitable, climate-resilient aquaculture from hatchery to harvest.
             </p>
-            <div className="space-y-2 text-sm text-teal-100">
-              <div className="flex items-center gap-3">
-                <FiMapPin className="h-4 w-4 text-gold-400 shrink-0" />
-                <span>Sahajanandnagar, Post-Shinganapur, Tal. Kopargaon, Dist. Ahilyanagar, Maharashtra 423603</span>
+            <div className="space-y-3 text-sm text-teal-100">
+              <div className="flex items-start gap-3">
+                <FiMapPin className="h-4 w-4 text-gold-400 shrink-0 mt-0.5" />
+                <span>{contact.address.oneLine}</span>
               </div>
-              <div className="flex items-center gap-3">
-                <FiPhone className="h-4 w-4 text-gold-400 shrink-0" />
-                <span>+91 2423 222 888 · +91 98220 12345</span>
+              <div className="flex items-start gap-3">
+                <FiPhone className="h-4 w-4 text-gold-400 shrink-0 mt-0.5" />
+                <div className="min-w-0">
+                  <span className="text-teal-300">Customer Care: </span>
+                  {contact.customerCare.map((p, i) => (
+                    <span key={p.e164}>
+                      {i > 0 && ' · '}
+                      <a href={telHref(p)} className="hover:text-terracotta-300 transition-colors whitespace-nowrap">
+                        {p.display}
+                      </a>
+                    </span>
+                  ))}
+                  <br />
+                  <span className="text-teal-300">Bulk Sales &amp; Purchase: </span>
+                  {contact.bulkSales.map((p) => (
+                    <a key={p.e164} href={telHref(p)} className="hover:text-terracotta-300 transition-colors whitespace-nowrap">
+                      {p.display}
+                    </a>
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <FiMail className="h-4 w-4 text-gold-400 shrink-0" />
-                <a href="mailto:contactus@sanjivanifish.com" className="hover:text-terracotta-300 transition-colors">
-                  contactus@sanjivanifish.com
-                </a>
+              <div className="flex items-start gap-3">
+                <FiMail className="h-4 w-4 text-gold-400 shrink-0 mt-0.5" />
+                <div className="min-w-0 flex flex-col">
+                  {contact.emails.map((email) => (
+                    <a key={email} href={`mailto:${email}`} className="hover:text-terracotta-300 transition-colors [overflow-wrap:anywhere]">
+                      {email.split('@')[0]}@<wbr />
+                      {email.split('@')[1]}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -81,7 +104,7 @@ export default function Footer() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="https://amrutsugar.com" target="_blank" rel="noreferrer" className="text-teal-100 hover:text-terracotta-300 transition-colors">
+                <a href="https://amrutsugar.com" target="_blank" rel="noopener noreferrer" className="text-teal-100 hover:text-terracotta-300 transition-colors">
                   → Amrut Sugar Industries
                 </a>
               </li>
