@@ -1,6 +1,5 @@
 export interface StatItem {
   id: string;
-  value: string;
   label: string;
   image: string;
 }
@@ -8,25 +7,21 @@ export interface StatItem {
 export const stats: StatItem[] = [
   {
     id: 'farmers',
-    value: '2,400+',
     label: 'Farmer Members',
     image: '/three decaded section/Screenshot 2026-09-30 103316.png',
   },
   {
     id: 'ponds',
-    value: '850',
     label: 'Ponds under Advisory',
     image: '/three decaded section/Screenshot 2026-09-30 103321.png',
   },
   {
     id: 'seed',
-    value: '18 Cr',
     label: 'Seed Produced / Year',
     image: '/three decaded section/Screenshot 2026-09-30 103328.png',
   },
   {
     id: 'tonnage',
-    value: '3,200 T',
     label: 'Harvest Aggregated',
     image: '/three decaded section/Screenshot 2026-09-30 103335.png',
   },
@@ -61,7 +56,7 @@ export const milestones: Milestone[] = [
   {
     year: '2024',
     title: 'Biofloc & Feed Plant',
-    description: 'New biofloc training center + 10 TPD floating feed mill.',
+    description: 'New biofloc training center & floating feed mill.',
     image: '/timeline/Screenshot 2026-09-28 144958.png',
   },
 ];

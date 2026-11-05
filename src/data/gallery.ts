@@ -10,21 +10,21 @@ export const gallery: GalleryImage[] = [
   {
     id: 'dsc-2120',
     title: 'Hatchery Floor',
-    caption: 'DSC_2120 — indoor carp hatchery facility',
+    caption: 'Indoor carp hatchery facility',
     category: 'pond',
     image: '/gallery/DSC_2120.JPG',
   },
   {
     id: 'dsc-2125',
     title: 'Egg Incubation',
-    caption: 'DSC_2125 — egg incubation tanks, carp seed production',
+    caption: 'Egg incubation tanks, carp seed production',
     category: 'pond',
     image: '/gallery/DSC_2125.JPG',
   },
   {
     id: 'dsc-2130',
     title: 'Rearing Hall',
-    caption: 'DSC_2130 — larval rearing & nursery operation',
+    caption: 'Larval rearing & nursery operation',
     category: 'pond',
     image: '/gallery/DSC_2130.JPG',
   },
@@ -146,39 +146,5 @@ export const gallery: GalleryImage[] = [
     caption: 'Sludge settling & probiotic maintenance rounds for biofloc systems',
     category: 'biofloc',
     image: "/gallery/WhatsApp Image 2025-05-31 at 5.36.16 PM.jpeg",
-  },
-];
-
-export interface TrainingItem {
-  id: string;
-  date: string;
-  topic: string;
-  duration: string;
-}
-
-export const upcomingTraining: TrainingItem[] = [
-  {
-    id: 't1',
-    date: 'Sep 14–15, 2026',
-    topic: 'Introduction to Biofloc Aquaculture',
-    duration: '2 days · residential',
-  },
-  {
-    id: 't2',
-    date: 'Sep 28, 2026',
-    topic: 'Pond Preparation & Stocking Management',
-    duration: '1 day · on-site',
-  },
-  {
-    id: 't3',
-    date: 'Oct 12–13, 2026',
-    topic: 'Carp Hatchery Operations (Hands-on)',
-    duration: '2 days · hatchery',
-  },
-  {
-    id: 't4',
-    date: 'Nov 09, 2026',
-    topic: 'Fish Health, Disease & Water Quality',
-    duration: '1 day · classroom + lab',
   },
 ];

@@ -11,7 +11,7 @@ const snapshotCards = [
   {
     icon: GiFishEggs,
     title: 'Carp Hatchery',
-    blurb: '18 crore quality seed / year — Rohu, Katla, Mrigal & more.',
+    blurb: 'Quality carp seed — Rohu, Katla, Mrigal & more.',
     to: '/services',
     accent: 'from-teal-500 to-teal-700',
   },
@@ -25,14 +25,14 @@ const snapshotCards = [
   {
     icon: GiFlour,
     title: 'Feed Plant',
-    blurb: '10 TPD extruded floating feed — nutritionally balanced.',
+    blurb: 'Extruded floating feed — nutritionally balanced.',
     to: '/services',
     accent: 'from-gold-500 to-gold-700',
   },
   {
     icon: GiPlantRoots,
     title: 'Farmer Community',
-    blurb: '2,400+ members, 850 ponds under advisory across Maharashtra.',
+    blurb: 'A growing network of member farmers across Maharashtra.',
     to: '/about',
     accent: 'from-terracotta-500 to-terracotta-700',
   },
@@ -43,7 +43,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Home"
-        description="Sanjivani Fisheries — FFPO empowering 2,400+ fish farmers in Maharashtra with carp hatchery, biofloc ponds, feed plant, training and end-to-end market linkages since 1996."
+        description="Sanjivani Fisheries — FFPO empowering fish farmers in Maharashtra with carp hatchery, biofloc ponds, feed plant, training and end-to-end market linkages since 1996."
       />
 
       <section className="relative w-full h-[88vh] min-h-[560px] max-h-[760px] overflow-hidden">
@@ -110,9 +110,6 @@ export default function HomePage() {
                     Learn more <FiArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
-                <span className="absolute top-6 right-6 font-serif text-3xl text-teal-100 group-hover:text-teal-200 transition-colors duration-500">
-                  0{i + 1}
-                </span>
               </Link>
             ))}
           </div>
@@ -124,7 +121,7 @@ export default function HomePage() {
           <Reveal className="lg:col-span-5">
             <div className="divider-gold mb-5" />
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-teal-800 tracking-tight leading-tight mb-5">
-              Three decades of fish farming. <span className="text-terracotta-500 italic">Rooted</span> in community.
+              Decades of fish farming. <span className="text-terracotta-500 italic">Rooted</span> in community.
             </h2>
             <p className="text-charcoal/80 leading-relaxed mb-6">
               Founded in 1996 by the late Hon. Shankarraoji Genuji Kolhe as a co-operative, today
@@ -185,7 +182,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-5 text-lg text-teal-100/85 max-w-2xl mx-auto leading-relaxed">
-              From a half-acre pond to a 40-tank biofloc unit — our team visits your site,
+              From a single backyard pond to a full biofloc unit — our team visits your site,
               runs the economics, and walks with you till your first harvest.
             </p>
           </Reveal>

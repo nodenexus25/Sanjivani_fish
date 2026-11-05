@@ -14,11 +14,11 @@ export default function AboutPage() {
     <>
       <SEO
         title="About Us"
-        description="Founded 1996 by Late Hon. Shankarraoji Genuji Kolhe. Sanjivani Fisheries — FFPO, Kopargaon — three decades of co-operative fish farming and rural prosperity in Maharashtra."
+        description="Founded 1996 by Late Hon. Shankarraoji Genuji Kolhe. Sanjivani Fisheries — FFPO, Kopargaon — decades of co-operative fish farming and rural prosperity in Maharashtra."
       />
       <PageHero
         title="A story of water, land & community."
-        subtitle="From a small 1996 co-operative to a 2,400-farmer FFPO — the Sanjivani story, in short."
+        subtitle="From a small village co-operative to a farmer-owned FFPO — the Sanjivani story, in short."
         image={heroImage}
       />
 
@@ -56,13 +56,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-charcoal/80 leading-relaxed">
                 <p>
-                  A visionary leader, social reformer and three-time MLA from Kopargaon,
+                  A visionary leader, social reformer and former MLA from Kopargaon,
                   Shankarraoji dedicated his life to lifting the farmer. He believed water was
                   Maharashtra's true wealth — and fish farming its quietest, most equitable form.
                 </p>
                 <p>
-                  In 1996 he registered Sanjivani Matsya Vikas as a co-operative with barely
-                  forty farmers. Today, more than 2,400 families across six talukas farm with
+                  In 1996 he registered Sanjivani Matsya Vikas as a co-operative with a handful
+                  of local farmers. Today, farming families across the region farm with
                   his name as their compass.
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function AboutPage() {
                   <FiBriefcase className="h-4 w-4 text-gold-600" /> FFPO registered · member-owned
                 </div>
                 <div className="inline-flex items-center gap-2 text-teal-700">
-                  <FiMapPin className="h-4 w-4 text-gold-600" /> Kopargaon HQ · 6 talukas served
+                  <FiMapPin className="h-4 w-4 text-gold-600" /> Kopargaon HQ · serving farmers across Maharashtra
                 </div>
               </div>
             </div>

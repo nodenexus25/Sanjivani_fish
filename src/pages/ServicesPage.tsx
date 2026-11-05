@@ -28,7 +28,7 @@ export default function ServicesPage() {
               Core Services
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-teal-800 tracking-tight leading-tight">
-              Seven services. One promise — your harvest, on time.
+              Every service. One promise — your harvest, on time.
             </h2>
           </div>
         </Reveal>
@@ -40,9 +40,6 @@ export default function ServicesPage() {
                 <div className="absolute top-0 left-0 h-[3px] w-full bg-teal-500 group-hover:bg-terracotta-500 transition-colors duration-600 ease-cinematic" />
                 <div className="h-14 w-14 flex items-center justify-center bg-teal-50 text-teal-700 group-hover:bg-terracotta-500 group-hover:text-white transition-all duration-600 ease-cinematic mb-6">
                   <s.icon className="h-7 w-7" />
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-gold-600 font-semibold mb-2">
-                  0{i + 1}
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-teal-800 tracking-tight mb-3">
                   {s.title}
@@ -73,7 +70,7 @@ export default function ServicesPage() {
                 Not sure where to begin?
               </h3>
               <p className="text-charcoal/80 leading-relaxed">
-                Book a free 45-minute consultation. We'll walk through your land, water source and budget — then
+                Book a free consultation. We'll walk through your land, water source and budget — then
                 recommend what to stock, how to stock, and when to harvest.
               </p>
             </Reveal>
